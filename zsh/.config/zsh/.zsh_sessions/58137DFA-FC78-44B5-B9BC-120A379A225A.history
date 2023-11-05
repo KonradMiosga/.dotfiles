@@ -285,5 +285,3 @@ git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/theme
 : 1699176146:0;ls
 : 1699176193:7;brew cleanup --prune=all --dry-run
 : 1699176219:7;brew cleanup --prune=all
-: 1699176254:1;tma
-: 1699176257:0;tmux-sessionizer
