@@ -1,0 +1,7 @@
+set hidden
+set icons
+
+map d # leave the command name empty like this for unmapping
+map dd delete
+map dD $IFS=':'; rm -rf $fx
+
