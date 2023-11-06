@@ -23,9 +23,6 @@ return require('packer').startup(function(use)
         end
     })
 
-    --code folding
-    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
-
     use({
         "folke/trouble.nvim",
         config = function()
