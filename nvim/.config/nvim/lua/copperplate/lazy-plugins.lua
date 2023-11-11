@@ -142,6 +142,7 @@ require('lazy').setup({
   --latex support
   { 'lervag/vimtex' },
 
+  -- Zen Mode
   {
     "folke/zen-mode.nvim",
     opts = {
