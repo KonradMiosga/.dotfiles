@@ -54,6 +54,7 @@ require('lazy').setup({
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
     },
+
   },
 
   -- Useful plugin to show you pending keybinds.
@@ -151,6 +152,9 @@ require('lazy').setup({
       -- refer to the configuration section below
     }
   },
+
+  --undo tree
+  { 'mbbill/undotree' },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
