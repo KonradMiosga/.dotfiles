@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/ ~/Studium/ws2324/EinfuehrungProgrammierung/ ~/Studium/ws2324/WissenschaftlichesArbeiten/ ~/Studium/ws2324/MathematischeGrundlagenDerInformatik/ ~/Studium/ws2324/PP/ ~/Studium/ws2324/GrundlagenHardware/ ~/Coding/ -mindepth 0 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/  ~/Studium/ws2324/ ~/Coding/ -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then
