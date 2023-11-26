@@ -17,6 +17,27 @@ require('telescope').setup {
       },
     },
   },
+  pickers = {
+    find_files = {
+      find_command = {
+        "rg",
+        "--no-ignore",
+        "-L",
+        "--hidden",
+        "--files",
+        "-g",
+        "!**/node_modules/*",
+        "-g",
+        "!**/.git/*",
+      },
+    },
+  },
+  extensions = {
+    file_browser = {
+      hidden = { file_browser = true, folder_browser = true },
+      prompt_path = true,
+    },
+  },
 }
 
 -- Enable telescope fzf native, if installed
