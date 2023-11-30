@@ -16,6 +16,7 @@ alias tma="tmux a"
 alias tkill="pkill 'tmux'"
 alias lf="lfcd"
 alias ll="ls -lA"
+alias lg="lazygit"
 
 source ~/.config/lf/lfcd.sh
 export PATH="/usr/local/sbin:$PATH"
