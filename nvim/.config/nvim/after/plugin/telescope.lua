@@ -1,13 +1,3 @@
--- local builtin = require('telescope.builtin')
--- vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
--- vim.keymap.set('n', '<C-p>', builtin.git_files, {})
--- vim.keymap.set('n', '<leader>ps', function()
--- 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
--- end)
--- vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
-
--- [[ Configure Telescope ]]
--- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
     mappings = {
@@ -41,7 +31,7 @@ require('telescope').setup {
 }
 
 -- Enable telescope fzf native, if installed
-pcall(require('telescope').load_extension, 'fzf')
+require("telescope").load_extension("fzf")
 
 -- Telescope live_grep in git root
 -- Function to find the git root directory based on the current buffer's path

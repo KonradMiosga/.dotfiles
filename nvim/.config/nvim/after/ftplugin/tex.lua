@@ -10,7 +10,7 @@ vim.g['vimtex_quickfix_mode'] = 0
 vim.g['vimtex_mappings_enabled'] = 1
 
 require('which-key').register {
-  ['<leader>l'] = { name = '[L]atex', _ = 'which_key_ignore' },
+    ['<leader>l'] = { name = '[L]atex', _ = 'which_key_ignore' },
 }
 vim.keymap.set("n", "<leader>ll", vim.cmd.VimtexCompile, { desc = 'Compile' })
 vim.keymap.set("n", "<leader>lv", vim.cmd.VimtexView, { desc = 'View' })
@@ -27,10 +27,10 @@ vim.g['vimtex_syntax_enabled'] = 1
 -- https://github.com/lervag/vimtex/blob/master/doc/vimtex.txt
 
 vim.g['vimtex_log_ignore'] = ({
-  'Underfull',
-  'Overfull',
-  'specifier changed to',
-  'Token not allowed in a PDF string',
+    'Underfull',
+    'Overfull',
+    'specifier changed to',
+    'Token not allowed in a PDF string',
 })
 
 -- vim.g['vimtex_complete_enabled'] = 1
