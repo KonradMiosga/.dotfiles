@@ -1,2 +1,0 @@
-- [x] map alt+L back to (at) symbol, currently mapped to some wm stuff
-- [ ]
