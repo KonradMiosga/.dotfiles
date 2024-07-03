@@ -26,6 +26,7 @@ return {
         require('mason-lspconfig').setup({
             -- Install these LSPs automatically
             ensure_installed = {
+                'clangd',
                 -- 'bashls', -- requires npm to be installed
                 -- 'cssls', -- requires npm to be installed
                 -- 'html', -- requires npm to be installed
@@ -37,6 +38,7 @@ return {
                 -- 'tsserver', -- requires npm to be installed
                 -- 'yamlls', -- requires npm to be installed
                 'jdtls',
+                'zls',
             }
         })
         require('mason-tool-installer').setup({
@@ -49,7 +51,7 @@ return {
 
         -- There is an issue with mason-tools-installer running with VeryLazy, since it triggers on VimEnter which has already occurred prior to this plugin loading so we need to call install explicitly
         -- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim/issues/39
-            vim.api.nvim_command('MasonToolsInstall')
+        vim.api.nvim_command('MasonToolsInstall')
 
         local lspconfig = require('lspconfig')
         local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -70,6 +72,16 @@ return {
             end
         })
 
+        lspconfig.zls.setup {
+            root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
+            settings = {
+                zls = {
+                    enable_inlay_hints = true,
+                    enable_snippets = true,
+                    warn_style = true,
+                },
+            },
+        }
         -- Lua LSP settings
         lspconfig.lua_ls.setup {
             settings = {
@@ -89,5 +101,17 @@ return {
             opts.border = opts.border or "rounded" -- Set border to rounded
             return open_floating_preview(contents, syntax, opts, ...)
         end
+
+        vim.diagnostic.config({
+            -- update_in_insert = true,
+            float = {
+                focusable = false,
+                style = "minimal",
+                border = "rounded",
+                source = "always",
+                header = "",
+                prefix = "",
+            },
+        })
     end
 }
