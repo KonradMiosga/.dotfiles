@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 -- Session Management
-opt.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- Line Numbers
 opt.relativenumber = true
@@ -21,6 +21,7 @@ opt.wrap = false
 opt.ignorecase = true
 opt.smartcase = true
 opt.hlsearch = false
+opt.incsearch = true
 
 -- Cursor Line
 opt.cursorline = true
@@ -30,7 +31,7 @@ opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 vim.diagnostic.config {
-  float = { border = "rounded" }, -- add border to diagnostic popups
+    float = { border = "rounded" }, -- add border to diagnostic popups
 }
 
 -- Backspace
@@ -58,3 +59,14 @@ opt.foldexpr = "nvim_treesitter#foldexpr()" -- Utilize Treesitter folds
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
+
+opt.scrolloff = 8
+opt.signcolumn = "yes"
+opt.isfname:append("@-@")
+
+opt.updatetime = 50

@@ -17,8 +17,10 @@ alias tkill="pkill 'tmux'"
 alias lf="lfcd"
 alias ll="ls -lA"
 alias lg="lazygit"
+alias zbr="zig build run"
 
 source ~/.config/lf/lfcd.sh
 export PATH="/usr/local/sbin:$PATH"
-export PATH=$PATH:~/zig-macos-x86_64-0.14.0-dev.184+bf588f67d/
+# export PATH=$PATH:~/zig-macos-x86_64-0.14.0-dev.184+bf588f67d/
 export PATH="/snap/bin/:$PATH"
+export CPATH="/usr/local/include/:$CPATH"
