@@ -38,7 +38,7 @@ return {
                 'quick_lint_js',
                 -- 'tsserver', -- requires npm to be installed
                 -- 'yamlls', -- requires npm to be installed
-                'jdtls',
+                -- 'jdtls',
                 'zls',
             }
         })
@@ -72,6 +72,8 @@ return {
                 end
             end
         })
+
+        lspconfig.jdtls.setup({})
 
         lspconfig.zls.setup {
             root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
