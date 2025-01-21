@@ -1,4 +1,4 @@
-bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s "^f" "tmux-sessionizer\n"
 
 export EDITOR='nvim'
 export DOTFILES=$HOME/.dotfiles

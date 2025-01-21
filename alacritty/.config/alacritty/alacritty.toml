@@ -1,4 +1,4 @@
-import = ["/home/konrad/.config/alacritty/gruvbox_material_alacritty.yml"]
+general.import = ["/home/konrad/.config/alacritty/gruvbox_material_alacritty.yml"]
 # startup_mode = "Maximized"
 
 [colors]
@@ -28,7 +28,7 @@ history = 10000
 multiplier = 3
 
 [window]
-decorations = "None"
+#decorations = "None"
 opacity = 0.95
 
 [window.class]
