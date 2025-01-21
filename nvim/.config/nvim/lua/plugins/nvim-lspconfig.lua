@@ -23,6 +23,7 @@ return {
     },
     config = function()
         require("fidget").setup({})
+        require("lspconfig.health").check()
         require('mason').setup()
         require('mason-lspconfig').setup({
             -- Install these LSPs automatically
@@ -73,7 +74,7 @@ return {
             end
         })
 
-        lspconfig.jdtls.setup({})
+        -- lspconfig.jdtls.setup({})
 
         lspconfig.zls.setup {
             root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),

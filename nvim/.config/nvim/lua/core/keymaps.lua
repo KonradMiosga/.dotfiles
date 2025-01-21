@@ -148,3 +148,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
