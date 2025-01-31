@@ -5,7 +5,7 @@ general.import = ["/home/konrad/.config/alacritty/gruvbox_material_alacritty.yml
 draw_bold_text_with_bright_colors = true
 
 [font]
-size = 12
+size = 10
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"

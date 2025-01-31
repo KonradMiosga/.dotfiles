@@ -8,10 +8,9 @@ return {
     -- https://github.com/nvim-lua/plenary.nvim
     'nvim-lua/plenary.nvim',
   },
-  opts = {
-    menu = {
-      width = 120
-    }
-  },
+  -- opts = {
+  --   menu = {
+  --     width = 120
+  --   }
+  -- },
 }
-

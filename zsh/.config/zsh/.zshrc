@@ -18,9 +18,16 @@ alias lf="lfcd"
 alias ll="ls -lA"
 alias lg="lazygit"
 alias zbr="zig build run"
+alias gs="git status"
+alias h="history|grep"
+
+# gitlog helper
+alias gls='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
+alias gll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
+alias gdate='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative'
+alias gdatelong='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short'
 
 source ~/.config/lf/lfcd.sh
 export PATH="/usr/local/sbin:$PATH"
-# export PATH=$PATH:~/zig-macos-x86_64-0.14.0-dev.184+bf588f67d/
 export PATH="/snap/bin/:$PATH"
 export CPATH="/usr/local/include/:$CPATH"
