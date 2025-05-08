@@ -1,13 +1,9 @@
-# Created by Zap installer
-[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
-plug "zsh-users/zsh-autosuggestions"
-plug "zap-zsh/supercharge"
-plug "zap-zsh/atmachine-prompt"
-plug "zsh-users/zsh-syntax-highlighting"
+source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+eval "$(starship init zsh)"
 
 # Load and initialise completion system
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 
 # source ~/.zprofile
 alias vim="nvim"
@@ -27,7 +23,6 @@ alias gll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn
 alias gdate='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative'
 alias gdatelong='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short'
 
-source ~/.config/lf/lfcd.sh
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/snap/bin/:$PATH"
-export CPATH="/usr/local/include/:$CPATH"
+export PATH="/home/copperplate/.local/bin:$PATH"
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
