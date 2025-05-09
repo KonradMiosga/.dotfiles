@@ -1,4 +1,4 @@
-source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 eval "$(starship init zsh)"
 
 # Load and initialise completion system
@@ -11,7 +11,7 @@ alias cl="clear"
 alias tma="tmux a"
 alias tkill="pkill 'tmux'"
 alias lf="lfcd"
-alias ll="ls -lA"
+alias ll="ls -lA --color --group-directories-first"
 alias lg="lazygit"
 alias zbr="zig build run"
 alias gs="git status"
