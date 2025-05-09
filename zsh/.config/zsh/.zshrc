@@ -24,5 +24,6 @@ alias gdate='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblu
 alias gdatelong='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short'
 
 export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.local/scripts:$PATH"
 export PATH="/home/copperplate/.local/bin:$PATH"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
