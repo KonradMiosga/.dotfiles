@@ -6,7 +6,7 @@ git commit -m 'automated dev commit'
 git push
 popd
 
-pushd ~/env
+pushd ~/dev
 git add .
 git commit -m 'automated dev commit'
 git push
