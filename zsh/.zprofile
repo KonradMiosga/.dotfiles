@@ -1,3 +1,4 @@
+export XDG_CONFIG_HOME=$HOME/.config
 bindkey -s "^f" "tmux-sessionizer\n"
 
 export EDITOR='nvim'
