@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# echo "syncing dotfiles"
+# pushd ~/.dotfiles
+# git add .
+# git commit -m 'automated dev commit'
+# git push
+# popd
+
+pushd ~/personal/ &>/dev/null
+git add .
+git commit -m 'automated dev commit'
+git push
+popd &>/dev/null
