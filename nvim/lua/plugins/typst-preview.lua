@@ -3,6 +3,6 @@ return {
   lazy = false,
   version = "1.*",
   opts = {
-    open_cmd = "qutebrowser %s",
+    open_cmd = "chromium %s",
   },
 }
