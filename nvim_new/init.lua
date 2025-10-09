@@ -1,1 +1,1 @@
-require("copperplate")
+require("config")
