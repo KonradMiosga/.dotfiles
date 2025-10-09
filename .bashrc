@@ -14,3 +14,4 @@ export PATH=~/.local/scripts/:$PATH
 
 bind '"\C-f":"tmux-sessionizer\n"'
 
+. "/home/copperplate/.local/share/bob/env/env.sh"
