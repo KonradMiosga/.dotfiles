@@ -1,3 +1,4 @@
+require("copperplate.packages")
 require("copperplate.options")
 require("copperplate.keymaps")
-require("copperplate.packages")
+require("copperplate.autocmds")
