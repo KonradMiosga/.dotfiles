@@ -1,7 +1,17 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
-vim.opt.conceallevel = 0
-vim.opt.spelllang = { "en", "de" }
-vim.opt.langmap = "ü[,Ü{,+],*}"
-vim.opt.swapfile = false
+vim.cmd([[set noswapfile]])
+
+vim.opt.winborder = "rounded"
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.showtabline = 2
+vim.opt.signcolumn = "yes"
+vim.opt.wrap = false
+vim.opt.cursorcolumn = false
+vim.opt.ignorecase = true
+vim.opt.smartindent = true
+vim.opt.termguicolors = true
+vim.opt.undofile = true
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
