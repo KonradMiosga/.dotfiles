@@ -31,3 +31,5 @@ vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
 vim.keymap.set('i', '<c-space>', function()
 	vim.lsp.completion.get()
 end)
+
+vim.keymap.set('n', '<leader>sm', "<cmd>:SupermavenToggle<cr>")

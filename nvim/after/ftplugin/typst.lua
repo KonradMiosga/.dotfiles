@@ -6,4 +6,6 @@ vim.cmd([[
 	setlocal linebreak
 	"setlocal spell
 	setlocal wrap
+	setlocal textwidth=100
+	setlocal colorcolumn=100
 ]])

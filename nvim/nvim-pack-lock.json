@@ -36,6 +36,10 @@
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
+    "supermaven-nvim": {
+      "rev": "07d20fc",
+      "src": "https://github.com/supermaven-inc/supermaven-nvim"
+    },
     "telescope-env.nvim": {
       "rev": "00a703c",
       "src": "https://github.com/LinArcX/telescope-env.nvim"

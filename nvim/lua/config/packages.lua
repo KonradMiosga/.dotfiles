@@ -12,4 +12,5 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
 	{ src = "https://github.com/LinArcX/telescope-env.nvim" },
 	{ src = "https://github.com/ellisonleao/gruvbox.nvim" },
+	{ src = "https://github.com/supermaven-inc/supermaven-nvim" },
 })
