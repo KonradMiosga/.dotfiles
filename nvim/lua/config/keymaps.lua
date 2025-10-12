@@ -20,6 +20,10 @@ vim.keymap.set('n', 'gK', function()
 	vim.diagnostic.config({ virtual_lines = new_config })
 end, { desc = 'Toggle diagnostic virtual_lines' })
 
+vim.keymap.set('n', '<leader>cd', function()
+	vim.diagnostic.open_float()
+end, { desc = 'Toggle diagnostic' })
+
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -33,4 +37,4 @@ vim.keymap.set('i', '<c-space>', function()
 	vim.lsp.completion.get()
 end)
 
-vim.keymap.set('n', '<leader>sm', "<cmd>:SupermavenToggle<cr>")
+vim.keymap.set('n', '<leader>ai', "<cmd>:SupermavenToggle<cr>")
