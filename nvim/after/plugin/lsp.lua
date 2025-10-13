@@ -1,5 +1,5 @@
 vim.lsp.enable({
-	"lua_ls", "tinymist", "jdtls", "kotlin_lsp", "clangd"
+	"lua_ls", "tinymist", "jdtls", "kotlin_lsp", "clangd", "gopls",
 })
 
 vim.lsp.config('lua_ls', {
