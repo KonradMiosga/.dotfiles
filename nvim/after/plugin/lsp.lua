@@ -51,4 +51,14 @@ vim.lsp.config('lua_ls', {
 	}
 })
 
+vim.lsp.config["tinymist"] = {
+	cmd = { "tinymist" },
+	filetypes = { "typst" },
+	settings = {
+		formatterMode = "typstyle",
+		exportPdf = "onType",
+		semanticTokens = "disable"
+	}
+}
+
 vim.diagnostic.config({ virtual_text = true })
