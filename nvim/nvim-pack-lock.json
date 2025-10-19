@@ -20,6 +20,10 @@
       "rev": "ad7146a",
       "src": "https://github.com/mason-org/mason.nvim"
     },
+    "nvim-java": {
+      "rev": "3d56b74",
+      "src": "https://github.com/nvim-java/nvim-java.git"
+    },
     "nvim-lspconfig": {
       "rev": "e688b48",
       "src": "https://github.com/neovim/nvim-lspconfig"

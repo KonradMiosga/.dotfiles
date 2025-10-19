@@ -14,5 +14,5 @@ vim.pack.add({
 	{ src = "https://github.com/ellisonleao/gruvbox.nvim" },
 	{ src = "https://github.com/supermaven-inc/supermaven-nvim" },
 	{ src = "https://github.com/j-hui/fidget.nvim" },
-	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
+	-- { src = "https://github.com/nvim-java/nvim-java.git" },
 })
