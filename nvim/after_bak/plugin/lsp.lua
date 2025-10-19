@@ -2,6 +2,8 @@ vim.lsp.enable({
 	"lua_ls", "tinymist", "clangd", "gopls", "html", "tailwindcss", "cssls",
 })
 
+vim.lsp.config('jdtls', { cmd = { 'jdtls' } })
+
 vim.lsp.config('lua_ls', {
 	on_init = function(client)
 		if client.workspace_folders then
@@ -60,5 +62,9 @@ vim.lsp.config["tinymist"] = {
 		semanticTokens = "disable"
 	}
 }
+
+vim.lsp.config("*", {
+	capabilities = capabilities,
+})
 
 vim.diagnostic.config({ virtual_text = true })
