@@ -9,6 +9,7 @@ source ~/.local/share/omarchy/default/bash/rc
 
 alias ll='ls -a'
 alias vim='nvim'
+alias lg='lazygit'
 
 export PATH=~/.local/scripts/:$PATH
 
