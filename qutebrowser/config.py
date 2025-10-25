@@ -1,39 +1,53 @@
 config.load_autoconfig() # load settings done via the gui
 
+c.tabs.title.format = "{audio} {index}| {current_title}"
+c.fonts.web.size.default = 16
+
+c.tabs.background = True
+c.new_instance_open_target = 'window'
+c.downloads.position = 'bottom'
+# c.spellcheck.languages = ['en-US']
+c.url.searchengines = {
+
+# note - if you use duckduckgo, you can make use of its built in bangs, of which there are many! https://duckduckgo.com/bangs
+        'DEFAULT': 'https://duckduckgo.com/?q={}',
+        '!aw': 'https://wiki.archlinux.org/?search={}',
+        '!apkg': 'https://archlinux.org/packages/?sort=&q={}&maintainer=&flagged=',
+        '!gh': 'https://github.com/search?o=desc&q={}&s=stars',
+        '!yt': 'https://www.youtube.com/results?search_query={}',
+        }
+c.url.searchengines['duden'] = 'https://www.duden.de/suchen/dudenonline/{}'
+c.url.searchengines['dictcc'] = 'https://www.dict.cc/?s={}'
+
+c.completion.open_categories = ['searchengines', 'quickmarks', 'bookmarks', 'history', 'filesystem']
+
+c.auto_save.session = True # save tabs on quit/restart
+
+config.bind('h', 'history')
+config.bind('cs','cmd-set-text -s :config-source')
+
+css = './gruvbox-all-sites.css'
+config.bind(',n', f'config-cycle content.user_stylesheets {css} ""')
+
+
 config.set("content.headers.user_agent",
            "Mozilla/5.0 (X11; Linux x86_64) "
            "AppleWebKit/537.36 (KHTML, like Gecko) "
            "Chrome/121.0.0.0 Safari/537.36",
            "https://accounts.google.com/*")
 
-c.colors.webpage.preferred_color_scheme = "dark"
 
-# Adblocking info -->
-# For yt ads: place the greasemonkey script yt-ads.js in your greasemonkey folder (~/.config/qutebrowser/greasemonkey).
-# The script skips through the entire ad, so all you have to do is click the skip button.
-# Yeah it's not ublock origin, but if you want a minimal browser, this is a solution for the tradeoff.
-# You can also watch yt vids directly in mpv, see qutebrowser FAQ for how to do that.
-# If you want additional blocklists, you can get the python-adblock package, or you can uncomment the ublock lists here.
-# c.content.blocking.enabled = True
-# c.content.blocking.method = 'adblock' # uncomment this if you install python-adblock
-# c.content.blocking.adblock.lists = [
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/legacy.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2020.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2021.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2022.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2023.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2024.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badware.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/privacy.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances-cookies.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances-others.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/quick-fixes.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt",
-#         "https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt"]
+c.colors.webpage.preferred_color_scheme = "dark"
+c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
+c.colors.webpage.darkmode.policy.images = 'never'
+config.set('colors.webpage.darkmode.enabled', False, 'file://*')
+
+# styles, cosmetics
+# c.content.user_stylesheets = ["~/.config/qutebrowser/styles/youtube-tweaks.css"]
+c.tabs.padding = {'top': 5, 'bottom': 5, 'left': 9, 'right': 9}
+c.tabs.indicator.width = 0 # no tab indicators
+# c.window.transparent = True # apparently not needed
+c.tabs.width = '7%'
 
 # adblock
 c.content.blocking.enabled = True
@@ -60,5 +74,5 @@ c.content.blocking.adblock.lists = [
     "https://raw.githubusercontent.com/brave/adblock-lists/master/brave-lists/brave-social.txt",
     "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt",
 ]
-
+c.editor.command = ['alacritty', '-e', 'nvim', '{file}', '-c', 'normal {line}G{column0}l']
 config.source("gruvbox.py")

@@ -6,7 +6,12 @@
 
 config_version: 2
 settings:
+  content.headers.user_agent:
+    global: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
+      Chrome/119.0 Safari/537.36
   content.javascript.clipboard:
     https://github.com: access-paste
   content.notifications.enabled:
     https://www.youtube.com: false
+  content.user_stylesheets:
+    global: null
