@@ -15,5 +15,7 @@ export PATH=~/.local/scripts/:$PATH
 
 bind '"\C-f":"tmux-sessionizer\n"'
 
+# export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+# export PATH="$JAVA_HOME/bin:$PATH"
 
 # . "/home/copperplate/.local/share/bob/env/env.sh"
