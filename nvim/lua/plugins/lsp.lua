@@ -3,7 +3,13 @@ return {
   opts = {
     diagnostics = { virtual_text = false },
     servers = {
-      tinymist = {},
+      tinymist = {
+        settings = {
+          formatterMode = "typstyle",
+          exportPdf = "onType",
+          semanticTokens = "disable",
+        },
+      },
     },
   },
 }
