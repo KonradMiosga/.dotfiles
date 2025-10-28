@@ -7,6 +7,7 @@ return {
         settings = {
           formatterMode = "typstyle",
           exportPdf = "onType",
+          outputPath = "output/$name",
           semanticTokens = "disable",
         },
       },
