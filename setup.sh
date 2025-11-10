@@ -28,11 +28,10 @@ remove=(
 
 )
 
-
 # --- Generic helper function ---
 link_path() {
     local src="$1"
-    local dst="$2"
+        local dst="$2"
 
     if [ ! -e "$src" ]; then
         printf 'Source does not exist, skipping: %s\n' "$src" >&2

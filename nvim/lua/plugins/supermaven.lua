@@ -1,9 +1,7 @@
 return {
   "supermaven-inc/supermaven-nvim",
   opts = {
-    keymaps = {
-      accept_suggestion = "<A-f>",
-      clear_suggestion = "<A-c>",
-    },
+    disable_keymaps = true,
+    disable_inline_completion = true,
   },
 }
