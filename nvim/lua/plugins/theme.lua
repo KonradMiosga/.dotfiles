@@ -1,1 +1,0 @@
-/home/copperplate/.config/omarchy/current/theme/neovim.lua
