@@ -1,4 +1,5 @@
 require 'config.set'
+require 'config.pack'
 require 'config.remap'
 require 'config.autocmd'
-require 'config.lazy_init'
+-- require 'config.lazy_init'
