@@ -6,6 +6,7 @@ vim.lsp.enable {
   'tinymist',
   'clangd',
   'stylua',
+  'gopls',
 }
 
 vim.lsp.config['tinymist'] = {

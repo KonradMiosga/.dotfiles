@@ -37,8 +37,10 @@ map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
--- Use CTRL-space to trigger LSP completion.
--- Use CTRL-Y to select an item. |complete_CTRL-Y|
 map('i', '<c-space>', function()
   vim.lsp.completion.get()
+end)
+
+map('n', 'gd', function()
+  vim.lsp.buf.type_definition()
 end)
