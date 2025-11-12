@@ -21,3 +21,4 @@ bind '"\C-f":"tmux-sessionizer\n"'
 # export PATH="$JAVA_HOME/bin:$PATH"
 
 # . "/home/copperplate/.local/share/bob/env/env.sh"
+. "/home/copperplate/.local/share/bob/env/env.sh"
