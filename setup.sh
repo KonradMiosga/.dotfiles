@@ -14,6 +14,7 @@ packages=(
     telegram-desktop
     zathura
     zathura-pdf-poppler
+    bob
 )
 
 aur_packages=(
@@ -95,3 +96,7 @@ for pkg in "${remove[@]}"; do
 done
 
 mkdir -p ~/repositories
+
+if [ ! -e "$HOME/.bash_login" ]; then
+  touch "$HOME/.bash_login"
+fi

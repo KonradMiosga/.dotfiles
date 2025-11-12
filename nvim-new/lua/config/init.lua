@@ -1,5 +1,3 @@
-require 'config.set'
-require 'config.pack'
-require 'config.remap'
-require 'config.autocmd'
--- require 'config.lazy_init'
+require 'config.settings'
+require 'config.keymaps'
+require 'config.plugins'

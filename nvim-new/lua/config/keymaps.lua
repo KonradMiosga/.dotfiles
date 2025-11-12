@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+
 map('n', '<leader>o', '<cmd>Oil<CR>')
 map('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
 
@@ -13,7 +14,7 @@ map('n', 'N', 'Nzzzv')
 map('n', '=ap', "ma=ap'a")
 
 -- greatest remap ever
-map('x', '<leader>p', [["_dP]], { desc = 'paste without copying' })
+map('x', '<leader>p', [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
 map({ 'n', 'v' }, '<leader>y', [["+y]])
@@ -35,16 +36,6 @@ map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
 map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-
--- telescope
-local builtin = require("telescope.builtin")
-
-map('n', '<leader>sf', builtin.find_files)
-map('n', '<leader>sg', builtin.git_files)
-map('n', '<leader>sr', builtin.oldfiles)
-map('n', '<leader>sm', builtin.man_pages)
-map('n', '<leader>sh', builtin.help_tags)
-map('n', '<leader>sk', builtin.keymaps)
 
 -- Use CTRL-space to trigger LSP completion.
 -- Use CTRL-Y to select an item. |complete_CTRL-Y|
