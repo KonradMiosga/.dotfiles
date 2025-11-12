@@ -11,6 +11,8 @@ alias ll='ls -a'
 alias vim='nvim'
 alias lg='lazygit'
 
+alias nvim-new='NVIM_APPNAME=nvim-new nvim'
+
 export PATH=~/.local/scripts/:$PATH
 
 bind '"\C-f":"tmux-sessionizer\n"'
