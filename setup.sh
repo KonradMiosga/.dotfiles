@@ -66,6 +66,9 @@ link_path "$DOTFILES_DIR/scripts" "$LOCAL_DIR/scripts"
 
 # bashrc
 link_path "$DOTFILES_DIR/.bashrc" "$HOME/.bashrc"
+# taskrc
+mkdir -p "$CONFIG_DIR/task"
+link_path "$DOTFILES_DIR/.taskrc" "$CONFIG_DIR/task/taskrc"
 
 # copy backgroundimages
 
