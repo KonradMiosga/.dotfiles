@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SESSION="taskwarrior"
-WINDOW="window1"
+WINDOW="Dashboard"
 WORKSPACE=7
 
 # Create the session if missing
@@ -19,7 +19,7 @@ hyprctl dispatch movetoworkspace "${WORKSPACE}"
 sleep 0.3
 
 if [ "$(tmux list-panes -t "${SESSION}:${WINDOW}" | wc -l)" -eq 1 ]; then
-  tmux split-window -h -l 57 -t "${SESSION}:${WINDOW}.0"
+  tmux split-window -h -l 65 -t "${SESSION}:${WINDOW}.0"
 fi
 
 if [ "$(tmux list-panes -t "${SESSION}:${WINDOW}" | wc -l)" -eq 2 ]; then
