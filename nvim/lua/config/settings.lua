@@ -40,3 +40,4 @@ vim.g.vimwiki_conceal_pre = 1
 vim.g.markdown_folding = 0
 
 vim.g.taskwiki_dont_fold = 1
+vim.g.taskwiki_data_location = '~/personal/.task'
