@@ -29,3 +29,10 @@ vim.opt.isfname:append '@-@'
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
+
+-- vimwiki
+vim.g.vimwiki_list = {
+  { path = '~/personal/vimwiki', syntax = 'markdown', ext = '.md' },
+}
+vim.g.vimwiki_markdown_link_ext = 1
+vim.g.vimwiki_conceal_pre = 1

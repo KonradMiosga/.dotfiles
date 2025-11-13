@@ -31,4 +31,5 @@ vim.pack.add {
   { src = 'https://github.com/chomosuke/typst-preview.nvim'},
 
   { src = 'https://github.com/lewis6991/gitsigns.nvim'},
+  { src = 'https://github.com/vimwiki/vimwiki'},
 }
