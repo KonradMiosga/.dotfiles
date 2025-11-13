@@ -31,3 +31,7 @@ dateformat=D.M.Y
 dateformat.annotation=D.M.Y H:N
 dateformat.report=D.M.Y
 dateformat.edit=Y-M-D
+
+urgency.uda.tags.uni.coefficient=10
+urgency.uda.tags.shk.coefficient=8
+urgency.uda.tags.home.coefficient=6
