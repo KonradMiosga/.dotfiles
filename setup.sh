@@ -15,6 +15,9 @@ packages=(
     zathura
     zathura-pdf-poppler
     bob
+    task
+    timew
+    html-xml-utils
 )
 
 aur_packages=(
@@ -69,6 +72,7 @@ link_path "$DOTFILES_DIR/.bashrc" "$HOME/.bashrc"
 # taskrc
 mkdir -p "$CONFIG_DIR/task"
 link_path "$DOTFILES_DIR/.taskrc" "$CONFIG_DIR/task/taskrc"
+link_path "$DOTFILES_DIR/hooks" "$CONFIG_DIR/task/hooks"
 
 # copy backgroundimages
 
