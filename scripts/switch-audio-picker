@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+mapfile -t sinks < <(pactl list short sinks | awk '{print $2}')
+
+selected=$(printf "%s\n" "${sinks[@]}" | fzf --prompt="Select audio sink: ")
+[ -z "$selected" ] && exit 0
+
+sink_name=$(echo "$selected" | awk '{print $1}')
+
+pactl set-default-sink "$sink_name"
+
+inputs=$(pactl list short sink-inputs | awk '{print $1}')
+for i in $inputs; do
+  pactl move-sink-input $i "$sink_name" 2>/dev/null
+done
