@@ -22,6 +22,7 @@ packages=(
 
 aur_packages=(
     vesktop
+    taskopen
 )
 
 remove=(

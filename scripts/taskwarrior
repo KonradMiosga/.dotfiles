@@ -19,7 +19,7 @@ hyprctl dispatch movetoworkspace "${WORKSPACE}"
 sleep 0.3
 
 if [ "$(tmux list-panes -t "${SESSION}:${WINDOW}" | wc -l)" -eq 1 ]; then
-  tmux split-window -h -l 65 -t "${SESSION}:${WINDOW}.0"
+  tmux split-window -h -l 100 -t "${SESSION}:${WINDOW}.0"
 fi
 
 if [ "$(tmux list-panes -t "${SESSION}:${WINDOW}" | wc -l)" -eq 2 ]; then
@@ -35,8 +35,8 @@ if [ "$(tmux list-panes -t "${SESSION}:${WINDOW}" | wc -l)" -eq 4 ]; then
 fi
 
 # Optional: run commands in the right pane
-tmux select-pane -t "${SESSION}:${WINDOW}.3"
-tmux send-keys -t "${SESSION}:${WINDOW}.3" "while true;do clear && task next limit:3;sleep 5;done" Enter
+tmux select-pane -t "${SESSION}:${WINDOW}.0"
+tmux send-keys -t "${SESSION}:${WINDOW}.0" "while true;do clear && task next;sleep 5;done" Enter
 
 tmux select-pane -t "${SESSION}:${WINDOW}.2"
 tmux send-keys -t "${SESSION}:${WINDOW}.2" "while true;do clear && task calendar;sleep 60;done" Enter
@@ -48,4 +48,4 @@ tmux send-keys -t "${SESSION}:${WINDOW}.1" "while true;do clear && timew summary
 tmux select-pane -t "${SESSION}:${WINDOW}.4"
 tmux send-keys -t "${SESSION}:${WINDOW}.4" "while true;do clear && timew;sleep 5;done" Enter
 
-tmux select-pane -t "${SESSION}:${WINDOW}.0"
+tmux select-pane -t "${SESSION}:${WINDOW}.3"

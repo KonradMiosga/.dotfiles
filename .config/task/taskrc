@@ -1,0 +1,90 @@
+# [Created by task 3.4.2 11/13/2025 07:38:14]
+data.location=/home/copperplate/personal/.task
+news.version=3.4.2
+
+# To use the default location of the XDG directories,
+# move this configuration file from ~/.taskrc to ~/.config/task/taskrc and update location config as follows:
+
+#data.location=~/.local/share/task
+hooks.location=~/.config/task/hooks
+
+# Color theme (uncomment one to use)
+#include light-16.theme
+#include light-256.theme
+#include bubblegum-256.theme
+#include dark-16.theme
+include dark-256.theme
+#include dark-red-256.theme
+#include dark-green-256.theme
+#include dark-blue-256.theme
+#include dark-violets-256.theme
+#include dark-yellow-green.theme
+#include dark-gray-256.theme
+#include dark-gray-blue-256.theme
+#include solarized-dark-256.theme
+#include solarized-light-256.theme
+#include no-color.theme
+
+# Date formats
+weekstart=monday
+dateformat=D.M.Y
+dateformat.annotation=D.M.Y H:N
+dateformat.report=D.M.Y
+dateformat.edit=D.M.Y
+
+urgency.uda.tags.uni.coefficient=10
+urgency.uda.tags.shk.coefficient=8
+urgency.uda.tags.home.coefficient=6
+urgency.uda.tags.chors.coefficient=4
+urgency.uda.tags.fun.coefficient=2
+
+uda.brainpower.type=string
+uda.brainpower.label=Brainpower
+uda.brainpower.values=H,M,L
+uda.brainpower.default=M
+
+#context.study.read=+uni
+#context.study.write=+uni
+#context.home.read=+home or +fun
+#context.work.read=+shk
+#context.work.write=+shk
+sync.gcp.bucket=copperplate-taskwarrior-sync
+sync.gcp.credential_path=\/home\/copperplate\/.config\/task\/task-sync-key.json
+sync.encryption_secret=${TASKRC_ENCRYPTION_SECRET}
+
+report.in.columns           = id,description
+report.in.description       = Inbox
+report.in.filter            = status:pending limit:page (+in)
+report.in.labels            = ID,Description
+
+# report.next.description     = Most urgent tasks
+# report.next.columns         = id,start.age,entry.age,urgency,depends,priority,project,tags,recur,scheduled.countdown,due.remaining,until.remaining,description,brainpower
+report.next.filter = +PENDING and +READY
+
+# report.next.labels          = ID,Active,Age,Urgency,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Brainpower
+# report.next.sort            = priority-,urgency-,brainpower-
+
+# disable aging coefficient
+urgency.age.coefficient=0 
+
+# disable project coefficient
+urgency.project.coefficient=0
+
+# disable tag coefficient
+urgency.tags.coefficient=0
+
+# disable annotation coefficient
+urgency.annotations.coefficient=0
+
+uda.taskwarrior-tui.shortcuts.4=taskopen
+
+#Taskwarrior tui selection
+uda.taskwarrior-tui.selection.indicator=->
+uda.taskwarrior-tui.selection.bold=yes
+uda.taskwarrior-tui.selection.italic=no
+uda.taskwarrior-tui.selection.dim=yes
+uda.taskwarrior-tui.selection.blink=no
+uda.taskwarrior-tui.selection.reverse=yes
+uda.taskwarrior-tui.task-report.show-info=false
+
+uda.taskwarrior-tui.task-report.next.filter= +PENDING and +READY

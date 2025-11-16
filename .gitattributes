@@ -1,0 +1,2 @@
+.config/task/task-sync-key.json filter=git-crypt diff=git-crypt
+.config/task/.task_env filter=git-crypt diff=git-crypt

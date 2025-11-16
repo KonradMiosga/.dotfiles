@@ -1,0 +1,27 @@
+---
+- name: Workstation Setup
+  hosts: localhost
+  become: true
+  gather_facts: yes
+
+  tasks:
+    
+    - name: Pacman - Full system upgrade
+      pacman:
+        update_cache: yes
+        upgrade: yes
+
+    - name: Install stow
+      pacman:
+        name: stow
+        state: present
+
+    - name: Stow dotfiles
+      command: stow -v -t ~ .
+      args:
+        chdir: "{{ playbook_dir }}/.."  # Go up one directory to dotfiles root
+      register: stow_result
+
+    - name: Show stow result
+      debug:
+        var: stow_result.stdout_lines
