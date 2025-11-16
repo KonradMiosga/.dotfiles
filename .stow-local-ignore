@@ -5,3 +5,4 @@ nvim-archive
 scripts
 setup.sh
 .gitattributes
+.git-crypt

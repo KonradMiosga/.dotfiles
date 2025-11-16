@@ -25,3 +25,26 @@
     - name: Show stow result
       debug:
         var: stow_result.stdout_lines
+
+    - name: Install essential packages
+      pacman:
+        name:
+          - tmux
+          - tmuxinator
+          - telegram-desktop
+          - zathura
+          - zathura-pdf-poppler
+          - bob
+          - task
+          - timew
+          - taskwarrior-tui
+        state: present
+
+    - name: Install AUR packages via pacman module using yay
+      community.general.pacman:
+        name:
+          - vesktop
+          - taskopen
+        state: present
+        executable: /usr/bin/yay
+
