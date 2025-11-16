@@ -15,7 +15,7 @@ alias mux='tmuxinator'
 
 alias nvim-new='NVIM_APPNAME=nvim-new nvim'
 
-export PATH=~/.local/scripts/:$PATH
+export PATH=~/.dotfiles/scripts/:$PATH
 
 bind '"\C-f":"tmux-sessionizer\n"'
 
