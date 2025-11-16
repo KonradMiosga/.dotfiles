@@ -17,7 +17,7 @@
         state: present
 
     - name: Stow dotfiles
-      command: stow -v -t ~ .
+      command: stow -v -t ~ . --adopt
       args:
         chdir: "{{ playbook_dir }}/.."  # Go up one directory to dotfiles root
       register: stow_result
