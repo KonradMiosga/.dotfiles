@@ -21,6 +21,7 @@ main() {
         install_ansible
     fi
 
+    ansible-galaxy collection install kewlfft.aur
     # Run the Ansible playbook
     echo "Running Ansible playbook..."
     ansible-playbook ansible-install.yml -v -K

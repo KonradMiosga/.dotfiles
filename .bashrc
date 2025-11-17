@@ -28,6 +28,10 @@ bind '"\C-f":"tmux-sessionizer\n"'
 # Task- and Timewarrior stuff
 alias in='task add +in'
 
+if [[ -z "$TMUX" && $- == *i* ]]; then
+    tmuxinator start poke
+fi
+
 tickle () {
     deadline=$1
     shift
