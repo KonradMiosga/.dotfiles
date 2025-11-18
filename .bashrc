@@ -1,28 +1,18 @@
 # All the default Omarchy aliases and functions
 # (don't mess with these directly, just overwrite them here!)
 source ~/.local/share/omarchy/default/bash/rc
-source ~/.config/task/.task_env
 
-# Add your own exports, aliases, and functions here.
-#
-# Make an alias for invoking commands you use constantly
-# alias p='python'
+source ~/.config/task/.task_env
 
 alias ll='ls -a'
 alias vim='nvim'
 alias lg='lazygit'
 alias mux='tmuxinator'
 
-alias nvim-new='NVIM_APPNAME=nvim-new nvim'
-
 export PATH=~/.dotfiles/scripts/:$PATH
 
 bind '"\C-f":"tmux-sessionizer\n"'
 
-# export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
-# export PATH="$JAVA_HOME/bin:$PATH"
-
-# . "/home/copperplate/.local/share/bob/env/env.sh"
 . "/home/copperplate/.local/share/bob/env/env.sh"
 
 # Task- and Timewarrior stuff
