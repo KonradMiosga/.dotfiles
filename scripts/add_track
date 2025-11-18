@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+PLAYLIST="${HOME}/Music/copperplate_playlist.m3u"
+CATEGORIES_FILE="${HOME}/Music/copperplate_categories"
+
+# Ensure files exist but DON'T truncate them
+mkdir -p "$(dirname "$CATEGORIES_FILE")"
+touch "$CATEGORIES_FILE"
+
+mkdir -p "$(dirname "$PLAYLIST")"
+touch "$PLAYLIST"
+
+for cmd in yt-dlp fzf; do
+    if ! command -v "$cmd" &>/dev/null; then
+        echo "Missing dependency: $cmd — please install it and re-run."
+        exit 1
+    fi
+done
+
+sanitize_title() {
+    local t="$1"
+    # remove common appended fragments
+    t=$(printf '%s' "$t" | sed -E 's/[[:space:]]*[-—][[:space:]]*YouTube.*$//I; s/[[:space:]]*[—-][[:space:]]*Mozilla Firefox$//I')
+    # remove newlines, collapse whitespace, trim
+    t=$(printf '%s' "$t" | tr '\n' ' ' | sed -E 's/^[[:space:]]+|[[:space:]]+$//g; s/[[:space:]]+/ /g')
+    # remove literal '#'
+    t=${t//#/}
+    # truncate to 100 chars
+    printf '%s' "${t:0:100}"
+}
+
+sanitize_category() {
+    local c="$1"
+    c=$(printf '%s' "$c" | sed -E 's/^[[:space:]]+|[[:space:]]+$//g; s/[[:space:]]+/ /g')
+    c=${c//#/}
+    c=${c%:}
+    printf '%s' "$c"
+}
+
+choose_category_interactive() {
+    # Read existing categories (ignore empty lines)
+    local cats choice newcat menu selected
+
+    mapfile -t cats < <(sed -n '/\S/ p' "$CATEGORIES_FILE" | sed -E 's/^[[:space:]]+|[[:space:]]+$//g')
+
+    # Build menu lines
+    menu=("Add new category")
+    for c in "${cats[@]}"; do
+        menu+=("$c")
+    done
+
+    # Let user pick via fzf. If fzf is cancelled, choice will be empty.
+    choice=$(printf '%s\n' "${menu[@]}" | fzf --height=10 --border --prompt="Category> " --no-multi || true)
+
+    # If no choice (fzf cancelled), treat as no category
+    if [[ -z "${choice:-}" ]]; then
+        echo ""
+        return
+    fi
+
+    if [[ "$choice" == "Add new category" ]]; then
+        read -r -p "New category name: " newcat
+        newcat=$(sanitize_category "$newcat")
+        if [[ -n "$newcat" ]]; then
+            # Append new category if it doesn't already exist (case-insensitive)
+            if ! grep -Fxi -q -- "$newcat" "$CATEGORIES_FILE"; then
+                printf '%s\n' "$newcat" >> "$CATEGORIES_FILE"
+            fi
+            echo "$newcat"
+        else
+            echo ""
+        fi
+    else
+        sanitize_category "$choice"
+    fi
+}
+
+echo "Paste YouTube URL (or multiple, space-separated):"
+read -r -a URLS
+
+for url in "${URLS[@]}"; do
+    [[ -z "$url" ]] && continue
+
+    raw_title=$(yt-dlp --no-warnings --get-title "$url" 2>/dev/null || echo "Unknown Title")
+    title=$(sanitize_title "$raw_title")
+
+    # Let user pick a category for each track
+    category=$(choose_category_interactive)
+
+    # Build header
+    if [[ -n "$category" ]]; then
+        header="${category}: ${title}"
+    else
+        header="${title}"
+    fi
+
+    header=$(printf '%s' "$header" | tr '\n' ' ' | sed -E 's/^[[:space:]]+|[[:space:]]+$//g')
+
+    # Append to playlist (do not recreate)
+    {
+        printf '# %s\n' "$header"
+        printf '%s\n' "$url"
+    } >> "$PLAYLIST"
+
+    echo "Added: $header"
+done
+
+echo "Playlist updated at: $PLAYLIST"
+

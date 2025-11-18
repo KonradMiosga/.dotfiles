@@ -1,7 +1,7 @@
-# /home/copperplate/.config/tmuxinator/task.yml
+# /home/copperplate/.config/tmuxinator/music.yml
 
-name: task
-root: ~/.dotfiles/.config/task/
+name: music
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -12,7 +12,7 @@ root: ~/.dotfiles/.config/task/
 # Project hooks
 
 # Runs on project start, always
-on_project_start: task context study
+# on_project_start: command
 
 # Run on project start, the first time
 # on_project_first_start: command
@@ -39,13 +39,19 @@ on_project_start: task context study
 # startup_window: editor
 
 # Specifies (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
-# startup_pane: 1
+startup_pane: 1
 
 # Controls whether the tmux session should be attached to automatically. Defaults to true.
 # attach: false
 
 windows:
-  - todo:
-        - taskwarrior-tui
-  - config:
-        - ll
+  - music:
+      layout: main-vertical
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - cava
+        - __play_track.sh --run
+  - playlist: vim ~/copperplate_playlist.m3u
+  - ls: ls

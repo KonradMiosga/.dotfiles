@@ -43,11 +43,12 @@ uda.brainpower.label=Brainpower
 uda.brainpower.values=H,M,L
 uda.brainpower.default=M
 
-#context.study.read=+uni
-#context.study.write=+uni
-#context.home.read=+home or +fun
-#context.work.read=+shk
-#context.work.write=+shk
+context.study.read=+uni
+context.study.write=+uni
+context.home.read=+home
+context.home.write=+home
+context.work.read=+shk
+context.work.write=+shk
 sync.gcp.bucket=copperplate-taskwarrior-sync
 sync.gcp.credential_path=\/home\/copperplate\/.config\/task\/task-sync-key.json
 sync.encryption_secret=${TASKRC_ENCRYPTION_SECRET}
@@ -88,3 +89,4 @@ uda.taskwarrior-tui.selection.reverse=yes
 uda.taskwarrior-tui.task-report.show-info=false
 
 uda.taskwarrior-tui.task-report.next.filter= +PENDING and +READY
+context=study
