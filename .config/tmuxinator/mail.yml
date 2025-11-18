@@ -1,6 +1,6 @@
-# /home/copperplate/.config/tmuxinator/task.yml
+# /home/copperplate/.config/tmuxinator/mail.yml
 
-name: task
+name: mail
 root: ~/
 
 # Optional tmux socket
@@ -45,5 +45,6 @@ root: ~/
 # attach: false
 
 windows:
-  - todo:
-        - taskwarrior-tui
+  - mail:
+    - mailsync
+    - neomutt

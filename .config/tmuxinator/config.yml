@@ -1,7 +1,7 @@
 # /home/copperplate/.config/tmuxinator/config.yml
 
 name: config
-root: ~/.config/
+root: ~/.dotfiles/
 
 # Optional tmux socket
 # socket_name: foo

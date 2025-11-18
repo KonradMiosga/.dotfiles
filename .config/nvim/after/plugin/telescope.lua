@@ -4,6 +4,14 @@ if not ok then
 end
 
 telescope.setup {
+  pickers = {
+
+    find_files = {
+
+      hidden = true,
+      follow = true,
+    },
+  },
   defaults = {
     preview = { treesitter = false },
     color_devicons = true,

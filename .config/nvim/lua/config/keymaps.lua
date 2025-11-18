@@ -2,6 +2,7 @@ local map = vim.keymap.set
 
 map('n', '<leader>o', '<cmd>Oil<CR>')
 map('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
+map('n', '<leader>tp', '<cmd>TypstPreview<CR>')
 
 map('v', 'J', ":m '>+1<CR>gv=gv")
 map('v', 'K', ":m '<-2<CR>gv=gv")
