@@ -1,0 +1,7 @@
+# vim: filetype=neomuttrc
+source /usr/share/mutt-wizard/mutt-wizard.muttrc
+source /home/copperplate/.config/mutt/accounts/konrad.miosga@gmail.com.muttrc
+macro index,pager i1 '<sync-mailbox><enter-command>source /home/copperplate/.config/mutt/accounts/konrad.miosga@gmail.com.muttrc<enter><change-folder>!<enter>;<check-stats>' "switch to konrad.miosga@gmail.com"
+macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+set header_cache_backend = "lmdb"

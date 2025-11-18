@@ -1,0 +1,24 @@
+IMAPStore konrad.miosga@gmail.com-remote
+Host imap.gmail.com
+Port 993
+User konrad.miosga@gmail.com
+PassCmd "pass konrad.miosga@gmail.com"
+AuthMechs LOGIN
+TLSType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore konrad.miosga@gmail.com-local
+Subfolders Verbatim
+Path /home/copperplate/.local/share/mail/konrad.miosga@gmail.com/
+Inbox /home/copperplate/.local/share/mail/konrad.miosga@gmail.com/INBOX
+
+Channel konrad.miosga@gmail.com
+Expunge Both
+Far :konrad.miosga@gmail.com-remote:
+Near :konrad.miosga@gmail.com-local:
+Patterns * !"[Gmail]/All Mail" !"*fts-flatcurve*" !"*virtual*"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
