@@ -10,6 +10,8 @@ alias lg='lazygit'
 alias mux='tmuxinator'
 
 export PATH=~/.dotfiles/scripts/:$PATH
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
 
 bind '"\C-f":"tmux-sessionizer\n"'
 
