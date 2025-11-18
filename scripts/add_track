@@ -2,8 +2,8 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-PLAYLIST="${HOME}/Music/copperplate_playlist.m3u"
-CATEGORIES_FILE="${HOME}/Music/copperplate_categories"
+PLAYLIST="${HOME}/.config/music/copperplate_playlist.m3u"
+CATEGORIES_FILE="${HOME}/.config/music/copperplate_categories"
 
 # Ensure files exist but DON'T truncate them
 mkdir -p "$(dirname "$CATEGORIES_FILE")"

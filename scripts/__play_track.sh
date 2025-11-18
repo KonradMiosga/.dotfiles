@@ -83,7 +83,7 @@ make_session_name() {
 
 # check_and_update_ytdlp
 
-tracks_file="${HOME}/Music/copperplate_playlist.m3u"
+tracks_file="${HOME}/.config/music/copperplate_playlist.m3u"
 if [[ ! -f "$tracks_file" ]]; then
 	echo "Error: Track file not found at $tracks_file"
 	exit 1
