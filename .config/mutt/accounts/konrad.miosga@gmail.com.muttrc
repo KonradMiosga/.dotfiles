@@ -12,8 +12,8 @@ set hostname = "gmail.com"
 source /usr/share/mutt-wizard/switch.muttrc
 set spool_file = "+INBOX"
 set postponed = "+[Gmail]/Drafts"
-set trash = "+[Gmail]/Bin"
-set record = "+[Gmail]/Sent"
+set trash = "+[Gmail]/Trash"
+set record = "+[Gmail]/Sent Mail"
 
 macro index o "<shell-escape>mailsync konrad.miosga@gmail.com<enter>" "sync konrad.miosga@gmail.com"
-mailboxes "=Archive" "=INBOX" "=[Gmail]/Bin" "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Spam"
+mailboxes "=INBOX" "=[Gmail]/Trash" "=[Gmail]/Drafts" "=[Gmail]/Sent Mail" "=[Gmail]/Spam"

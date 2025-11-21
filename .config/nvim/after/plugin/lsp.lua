@@ -14,6 +14,7 @@ vim.lsp.config['tinymist'] = {
     formatterMode = 'typstyle',
     exportPdf = 'onType',
     semanticTokens = 'disable',
+    outputPath = './output/$name',
   },
 }
 

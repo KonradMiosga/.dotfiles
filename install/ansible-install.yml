@@ -17,14 +17,15 @@
         state: present
 
     - name: Stow dotfiles
-      command: stow -v -t ~ . --adopt
+      become: false
+      shell: stow -v -t ~ . --adopt
       args:
         chdir: "{{ playbook_dir }}/.."  # Go up one directory to dotfiles root
-      register: stow_result
+      # register: stow_result
 
-    - name: Show stow result
-      debug:
-        var: stow_result.stdout_lines
+    # - name: Show stow result
+    #   debug:
+    #     var: stow_result.stdout_lines
 
     - name: Install essential packages
       pacman:
@@ -37,6 +38,9 @@
           - task
           - timew
           - taskwarrior-tui
+          - newsboat
+          - mpv
+          - yt-dlp
         state: present
 
     - name: Ensure kewlfft.aur collection is installed
