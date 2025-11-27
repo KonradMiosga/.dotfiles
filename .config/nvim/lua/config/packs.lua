@@ -35,4 +35,6 @@ vim.pack.add {
 
   { src = 'https://github.com/vimwiki/vimwiki'},
   { src = 'https://github.com/tbabej/taskwiki'},
+
+  { src = 'https://github.com/mrcjkb/rustaceanvim'},
 }
