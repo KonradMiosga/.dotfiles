@@ -1,13 +1,18 @@
-require('mason').setup()
-require('fidget').setup {}
-
-vim.lsp.enable {
-  'lua_ls',
-  'tinymist',
-  'clangd',
-  'stylua',
-  'gopls',
+require('mason').setup {
+  ensure_installed = {
+  },
 }
+require('mason-lspconfig').setup {
+  ensure_installed = {
+    'lua_ls',
+    'tinymist',
+    'clangd',
+    'gopls',
+    'zls',
+    'marksman',
+  },
+}
+require('fidget').setup {}
 
 vim.lsp.config['tinymist'] = {
   settings = {

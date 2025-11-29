@@ -17,9 +17,9 @@ cmp.setup {
     ['<C-Space>'] = cmp.mapping.complete(),
   },
   sources = cmp.config.sources({
-    { name = 'supermaven', group_index = 2 },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'supermaven' },
   }, {
     { name = 'buffer' },
     { name = 'path' },
