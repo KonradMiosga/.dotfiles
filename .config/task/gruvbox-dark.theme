@@ -2,8 +2,8 @@
 # Based on Kitty Gruvbox Dark color scheme
 
 # Colors from Kitty config:
-# background              #282828
-# foreground              #ebdbb2
+# background              #282828 -> color235
+# foreground              #ebdbb2 -> color223
 # color0                  #3c3836 (Dark gray)
 # color1                  #cc241d (Red)
 # color2                  #98971a (Green)
@@ -22,35 +22,35 @@
 # color15                 #fbf1c7 (White)
 
 
-color.deleted=color8 on default
-color.completed=color7 on default
+color.deleted=color8 on color235
+color.completed=color7 on color235
 color.active=color11 on color0
-color.overdue=color1 on default
-color.scheduled=color3 on default
-color.due.today=color9 on default
-color.due=color1 on default
-color.blocked=color5 on default
-color.blocking=color13 on default
-color.recurring=color6 on default
-color.tagged=color4 on default
+color.overdue=color1 on color235
+color.scheduled=color3 on color235
+color.due.today=color9 on color235
+color.due=color1 on color235
+color.blocked=color5 on color235
+color.blocking=color13 on color235
+color.recurring=color6 on color235
+color.tagged=color4 on color235
 
 # Default foreground and background
-color.fg=foreground
-color.bg=background
+color.fg=color223
+color.bg=color235
 
 # Other elements (adjust as needed)
 color.header=color11 on color0
-color.odd=default
-color.even=default
+color.odd=color223 on color235
+color.even=color223 on color235
 color.grid=color8
 color.summary.bar=color11
 color.summary.bg=color0
 color.undo.color=color11
 color.undo.label=color1
-color.warning=color1 on default
-color.error=color9 on default
-color.feature=color4 on default
-color.label=color12 on default
-color.debug=color8 on default
-color.alert=color1 on default
-color.footnote=color8 on default
+color.warning=color1 on color235
+color.error=color9 on color235
+color.feature=color4 on color235
+color.label=color12 on color235
+color.debug=color8 on color235
+color.alert=color1 on color235
+color.footnote=color8 on color235
