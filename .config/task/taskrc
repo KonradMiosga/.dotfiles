@@ -13,7 +13,8 @@ hooks.location=~/.config/task/hooks
 #include light-256.theme
 #include bubblegum-256.theme
 #include dark-16.theme
-include dark-256.theme
+#include dark-256.theme
+include gruvbox-dark.theme
 #include dark-red-256.theme
 #include dark-green-256.theme
 #include dark-blue-256.theme
@@ -89,4 +90,3 @@ uda.taskwarrior-tui.selection.reverse=yes
 uda.taskwarrior-tui.task-report.show-info=false
 
 uda.taskwarrior-tui.task-report.next.filter= +PENDING and +READY
-context=work

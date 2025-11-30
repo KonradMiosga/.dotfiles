@@ -1,0 +1,56 @@
+# Gruvbox Dark theme for Taskwarrior-TUI
+# Based on Kitty Gruvbox Dark color scheme
+
+# Colors from Kitty config:
+# background              #282828
+# foreground              #ebdbb2
+# color0                  #3c3836 (Dark gray)
+# color1                  #cc241d (Red)
+# color2                  #98971a (Green)
+# color3                  #d79921 (Yellow)
+# color4                  #458588 (Blue)
+# color5                  #b16286 (Magenta)
+# color6                  #689d6a (Cyan)
+# color7                  #a89984 (Light gray)
+# color8                  #928374 (Medium gray)
+# color9                  #fb4934 (Light red)
+# color10                 #b8bb26 (Light green)
+# color11                 #fabd2f (Light yellow)
+# color12                 #83a598 (Light blue)
+# color13                 #d3869b (Light magenta)
+# color14                 #8ec07c (Light cyan)
+# color15                 #fbf1c7 (White)
+
+
+color.deleted=color8 on default
+color.completed=color7 on default
+color.active=color11 on color0
+color.overdue=color1 on default
+color.scheduled=color3 on default
+color.due.today=color9 on default
+color.due=color1 on default
+color.blocked=color5 on default
+color.blocking=color13 on default
+color.recurring=color6 on default
+color.tagged=color4 on default
+
+# Default foreground and background
+color.fg=foreground
+color.bg=background
+
+# Other elements (adjust as needed)
+color.header=color11 on color0
+color.odd=default
+color.even=default
+color.grid=color8
+color.summary.bar=color11
+color.summary.bg=color0
+color.undo.color=color11
+color.undo.label=color1
+color.warning=color1 on default
+color.error=color9 on default
+color.feature=color4 on default
+color.label=color12 on default
+color.debug=color8 on default
+color.alert=color1 on default
+color.footnote=color8 on default
