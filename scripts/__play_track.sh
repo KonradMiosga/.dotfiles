@@ -37,33 +37,16 @@ if [[ "$1" == "--run" ]]; then
 	RUN_MODE=true
 fi
 
-check_and_update_ytdlp() {
-	local timestamp_file="${HOME}/.cache/ytdlp_last_update"
-	local current_time=$(date +%s)
+required=(tmux mpv fzf yt-dlp)
 
-	# Create cache directory if it doesn't exist
-	mkdir -p "${HOME}/.cache"
-
-	# Check if timestamp file exists and is less than 24 hours old
-	if [[ -f "$timestamp_file" ]] && (($(cat "$timestamp_file") > (current_time - 86400))); then
-		return 0
-	fi
-
-	if ! command -v pipx &>/dev/null; then
-		python3 -m pip install --user pipx
-		python3 -m pipx ensurepath
-		source ~/.zshrc
-	fi
-	if ! pipx list | grep -q yt-dlp; then
-		pipx install yt-dlp
-	else
-		pipx upgrade yt-dlp
-	fi
-	yt-dlp --version
-
-	# Update timestamp
-	echo "$current_time" >"$timestamp_file"
-}
+for cmd in "${required[@]}"; do
+    if ! command -v "$cmd" &>/dev/null; then
+        echo "$cmd is missing, installing..."
+        sudo pacman -S --noconfirm "$cmd"
+    else
+        echo "$cmd is already installed"
+    fi
+done
 
 make_session_name() {
     local song_title="$1"

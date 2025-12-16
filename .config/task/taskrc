@@ -90,3 +90,4 @@ uda.taskwarrior-tui.selection.reverse=yes
 uda.taskwarrior-tui.task-report.show-info=false
 
 uda.taskwarrior-tui.task-report.next.filter= +PENDING and +READY
+context=work
