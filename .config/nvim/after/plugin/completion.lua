@@ -2,6 +2,12 @@ local ok, cmp = pcall(require, 'cmp')
 if not ok then
   return
 end
+
+local autopairs_ok, autopairs_cmp = pcall(require, 'nvim-autopairs.completion.cmp')
+if not autopairs_ok then
+  return
+end
+
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup {
@@ -25,3 +31,8 @@ cmp.setup {
     { name = 'path' },
   }),
 }
+
+cmp.event:on(
+  'confirm_done',
+  autopairs_cmp.on_confirm_done()
+)

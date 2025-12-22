@@ -88,6 +88,19 @@ vim.keymap.set('n', '<leader>dr', dap.repl.toggle, { desc = 'Toggle REPL' })
 vim.keymap.set('n', '<leader>dl', dap.run_last, { desc = 'Run Last' })
 vim.keymap.set('n', '<leader>dt', dapui.toggle, { desc = 'Toggle UI' })
 
+dap.configurations.rust = {
+  {
+    name = 'Launch file',
+    type = 'codelldb',
+    request = 'launch',
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = true,
+  },
+}
+
 dap.configurations.c = {
   {
     name = 'Launch',

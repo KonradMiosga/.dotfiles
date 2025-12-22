@@ -10,6 +10,8 @@ require('mason-lspconfig').setup {
     'gopls',
     'zls',
     'marksman',
+    'rust_analyzer',
+    'ts_ls',
   },
 }
 require('fidget').setup {}
@@ -45,7 +47,7 @@ vim.diagnostic.config {
         [vim.diagnostic.severity.INFO] = diagnostic.message,
         [vim.diagnostic.severity.HINT] = diagnostic.message,
       }
-      return diagnostic_message[diagnostic.severity]
-    end,
-  },
-}
+          return diagnostic_message[diagnostic.severity]
+          end,
+        },
+      }

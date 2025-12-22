@@ -27,6 +27,8 @@ vim.pack.add {
 
   { src = 'https://github.com/stevearc/conform.nvim' },
 
+  { src = 'https://github.com/windwp/nvim-autopairs' },
+
   { src = 'https://github.com/supermaven-inc/supermaven-nvim' },
 
   { src = 'https://github.com/lewis6991/gitsigns.nvim'},
@@ -39,4 +41,5 @@ vim.pack.add {
   { src = 'https://github.com/iamcco/markdown-preview.nvim' },
   { src = 'https://github.com/mason-org/mason-lspconfig.nvim' },
   { src = 'https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim' },
+  { src = 'https://github.com/folke/todo-comments.nvim' },
 }

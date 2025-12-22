@@ -8,6 +8,8 @@ alias ll='ls -a'
 alias vim='nvim'
 alias lg='lazygit'
 alias mux='tmuxinator'
+alias cobra-cli="~/go/bin/cobra-cli"
+
 
 export PATH=~/.dotfiles/scripts/:$PATH
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"

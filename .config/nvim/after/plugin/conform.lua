@@ -5,6 +5,7 @@ require('conform').setup {
     go = { 'gofmt' },
     zig = { 'zigfmt' },
     markdown = { 'prettier' },
+    rust = { 'rustfmt' },
   },
 }
 
