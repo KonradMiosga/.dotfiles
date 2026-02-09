@@ -4,6 +4,6 @@ if not ok then
 end
 require('supermaven-nvim').setup {
   ignore_filetypes = { typst = true },
-  disable_inline_completion = true,
-  disable_keymaps = true,
+  -- disable_inline_completion = true,
+  -- disable_keymaps = true,
 }
